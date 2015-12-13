@@ -38,11 +38,3 @@ use the links in another container via exposed port 2222:
 	docker run --link staging-mongo:db.staging \ 
 	    --link production-mongo:db.production \
 	    my_app start
-
-# Changelog
-
-* 2015-11-10
-
-    Thanks to @ignar I took another look at the dockerfile and have updated it to use [AlpineLinux](http://www.alpinelinux.org/) 
-    This results in a _much_ smaller image (<8mb) and is still just as fast and functional. 
-    Thanks @ignar for bringing this container back to my attention :)
