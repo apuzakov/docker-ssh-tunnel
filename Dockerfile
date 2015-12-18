@@ -10,7 +10,7 @@
 ###
 
 FROM alpine:3.2
-MAINTAINER Leigh Phillips <neurocis@qlustor.com>
+MAINTAINER Team QLUSTOR <team@qlustor.com>
 
 ENV SSH_AUTH_SOCK /ssh-agent
 
