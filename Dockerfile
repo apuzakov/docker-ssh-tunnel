@@ -9,14 +9,16 @@
 #
 ###
 
-FROM alpine:3.2
+FROM alpine:3.3
 MAINTAINER Team QLUSTOR <team@qlustor.com>
 
 ENV SSH_AUTH_SOCK /ssh-agent
 
 ####
 # Install the SSH-client
-RUN apk add --update openssh-client && rm -rf /var/cache/apk/*
+RUN apk add --update openssh-client && rm -rf /var/cache/apk/* \
+ && echo -e 'Host *\nUseRoaming no' >> /etc/ssh/ssh_config
+#^^ Fix OpenSSH's Client Bug CVE-0216-0777 and CVE-0216-0778 by Disabling UseRoaming
 
 VOLUME ["/ssh-agent"]
 EXPOSE 2222 
